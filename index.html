@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tickertape Clone</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background-color: #1C2230;
+            color: #ffffff;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            padding: 12px 24px;
+            background-color: #1C2230;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            height: 24px;
+            margin-right: 20px;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            background-color: #2A3241;
+            border-radius: 8px;
+            padding: 8px 16px;
+            flex: 1;
+            max-width: 480px;
+        }
+
+        .search-container input {
+            background: none;
+            border: none;
+            color: white;
+            width: 100%;
+            padding: 4px;
+            outline: none;
+        }
+
+        .nav-items {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-left: 24px;
+        }
+
+        .nav-items a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .login-btn {
+            background-color: white;
+            color: #1C2230;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 24px;
+        }
+
+        .market-status {
+            padding: 24px;
+        }
+
+        .indices {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .index {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .negative {
+            color: #FF4E4E;
+        }
+
+        .positive{
+            color: #0b4f0d;
+        }
+
+        .market-mood {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .fear-zone {
+            color: #FFA726;
+        }
+
+        .weekly-indicators {
+            display: flex;
+            gap: 32px;
+            margin-top: 24px;
+        }
+
+        .indicator {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 3px solid #4CAF50;
+            background: conic-gradient(#4CAF50 50%, #140101 40%);
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .see-all {
+            color: #2196F3;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .feature-list li {
+            margin-bottom: 12px;
+            color: #B0BEC5;
+        }
+
+        .cta-button {
+            display: block;
+            background-color: #2A3241;
+            color: white;
+            text-align: center;
+            padding: 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-items">
+            <a href="#Portfolio">Portfolio</a>
+            <a href="#">Gold</a>
+            <a href="#">Screener</a>
+            <a href="#">Credit</a>
+            <a href="#">More</a>
+        </div>
+        <a href="#" class="login-btn">Sign Up / Login</a>
+    </nav>
+
+    <div class="market-status">
+        <div class="indices">
+            <div class="index">
+                <span>NIFTY 50</span>
+                <span class="negative">▼ 0.51%</span>
+            </div>
+            <div class="index">
+                <span>SENSEX</span>
+                <span class="negative">▼ 0.56%</span>
+            </div>
+        </div>
+        <div class="market-mood">
+            The market is in <span class="fear-zone">Fear</span> zone
+        </div>
+        <div class="weekly-indicators">
+            <div class="indicator">
+                <div class="circle"></div>
+                <span>MON</span>
+            </div>
+            <div class="indicator">
+                <div class="circle"></div>
+                <span>TUE</span>
+            </div>
+            <div class="indicator">
+                <div class="circle"></div>
+                <span>WED</span>
+            </div>
+            <div class="indicator">
+                <div class="circle"></div>
+                <span>THU</span>
+            </div>
+            <div class="indicator">
+                <div class="circle"></div>
+                <span>TODAY</span>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="search">
+                <div class="hero">
+                    <h1>Stock Search</h1>
+                    <div class="search-container">
+                        <input type="text" placeholder="Search for stocks..." class="search-input">
+                        <button title="button" class="search-btn">
+                            <i data-lucide="search"></i>
+                        </button>
+                    </div>
+                </div>
+    </section>
+
+    <main class="content">
+        <section>
+            <div class="section-header">
+                <h2>Market and sectors</h2>
+                <a href="#" class="see-all">See All</a>
+            </div>
+            <section class="features">
+                <div class="feature-card stock-img">
+                    <i data-lucide="line-chart" class="feature-icon"></i>
+                    <h2>Stock Price Visualizer</h2>
+                    <p>View and compare stock prices over different time periods.</p>
+                </div>
+                <div class="feature-card stock-img">
+                    <i data-lucide="briefcase" class="feature-icon"></i>
+                    <h2>Portfolio Backtester</h2>
+                    <p>Simulate investment portfolios and evaluate potential returns.</p>
+                </div>
+            
+                <div class="feature-card stock-img">
+                    <i data-lucide="line-chart" class="feature-icon"></i>
+                    <h2>Hot-In Markets</h2>
+                    <p>View and compare stock prices over different time periods.</p>
+                </div>
+            
+                <div class="feature-card stock-img">
+                    <i data-lucide="line-chart" class="feature-icon"></i>
+                    <h2>Recomendation</h2>
+                    <p>View and compare stock prices over different time periods.</p>
+                </div>
+            </section>
+        </section>
+
+
+
+
+                <section>
+                    <div class="section-header">
+                        <h2>Stocks</h2>
+                        <a href="#" class="see-all">See All</a>
+                    </div>
+                    <section class="features">
+                        <div class="feature-card card-img">
+                            <h2>Hindalco Industries Ltd</h2>
+                            <p><span class="positive">▲</span> 2.48% Return</p>
+                        </div>
+                        <div class="feature-card card-img">
+                            <h2>Hindalco Industries Ltd</h2>
+                            <p><span class="positive">▲</span> 2.48% Return</p>
+                        </div>
+                
+                        <div class="feature-card card-img">
+                            <h2>Hindalco Industries Ltd</h2>
+                            <p><span class="positive">▲</span> 2.48% Return</p>
+                        </div>
+                
+                        <div class="feature-card card-img">
+                            
+                            <h2>Hindalco Industries Ltd</h2>
+                            <p><span class="positive">▲</span>  2.48% Return</p>
+                        </div>
+  
+                    </section>
+                </section>
+
+
+
+        
+
+        <section>
+            <div class="section-header">
+                <h2>Today's news and event</h2>
+            </div>
+            
+            <div class="daily-new features">
+                <a href="#">
+                    <div class="newsCointainer">All</div>
+                </a>
+                <a href="#">
+                    <div class="newsCointainer">News</div>
+                </a>
+                <a href="#">
+                    <div class="newsCointainer">Macros</div>
+                </a>
+                <a href="#">
+                    <div class="newsCointainer">Earning</div>
+                </a>
+                <a href="#">
+                    <div class="newsCointainer">Crop</div>
+                </a>
+                <a href="#">
+                    <div class="newsCointainer">Divident</div>
+                </a>
+            </div>
+
+
+            <div class="news-desc">
+                <div class="feature-card">
+                    <h5>Hindalco Industries Ltd</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, velit!</p>
+                    <span>3 hours ago
+                    Capital Market - Live</span>
+                </div>
+
+
+
+                <div class="feature-card">
+                    <h5>Hindalco Industries Ltd</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, velit!</p>
+                    <span>3 hours ago
+                        Capital Market - Live</span>
+                </div>
+
+
+                <div class="feature-card">
+                    <h5>Hindalco Industries Ltd</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, velit!</p>
+                    <span>3 hours ago
+                        Capital Market - Live</span>
+                </div>
+
+                <div class="feature-card">
+                    <h5>Hindalco Industries Ltd</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, velit!</p>
+                    <span>3 hours ago
+                        Capital Market - Live</span>
+                </div>
+
+
+                
+
+                
+            </div>
+        </section>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <section>
+            <h2>Track your stocks and mutual fund investments</h2>
+            <ul class="feature-list">
+                <li>Connect multiple demat accounts in one go</li>
+                <li>Compare your Diversification Score with peers' top fund choices</li>
+                <li>Predict your portfolio's expected returns</li>
+            </ul>
+            <p style="color: #B0BEC5;">Import in 1-tap! takes less than a minute!</p>
+            
+        </section>
+
+
+
+        
+    </main>
+
+
+
+    <footer class="footer">
+        <p>Your go-to platform for market insights, stock analysis, and investment tools.</p>
+        <div class="links">
+            <a href="#">Home</a>
+            <a href="#">Stock Screener</a>
+            <a href="#">Backtester</a>
+            <a href="#">Comparison</a>
+        </div>
+        <div class="social">
+            <a href="#">🔵 Facebook</a>
+            <a href="#">🔴 YouTube</a>
+        </div>
+        <p>&copy; <span id="year"></span> Tickertape Clone. All rights reserved.</p>
+    </footer>
+ 
+    <script src="script.js"></script>
+</body>
+
+</html>
+

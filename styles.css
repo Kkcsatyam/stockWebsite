@@ -1,0 +1,395 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+main {
+  padding-top: 80px;
+  min-height: calc(100vh - 60px);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+
+.search-container {
+  display: flex;
+  max-width: 600px;
+  width: 100%;
+}
+
+.search-input {
+  flex-grow: 1;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 2px solid var(--primary-color);
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+}
+
+.search-btn {
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+  transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+  background-color: #860f0b;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  background-color: #1c2230;
+  color: #ffffff;
+}
+
+.feature-card {
+  background-color: var(--card-background);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 14px whitesmoke;
+  text-align: center;
+  transition: transform 0.3s ease;
+  max-width: 300px;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-card {
+    width: 100%;
+  }
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+  background-color: #1c2230;
+  color: #ffffff;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  background-color: #1c2230;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+  height: 24px;
+  margin-right: 20px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: #2a3241;
+  border-radius: 8px;
+  padding: 8px 16px;
+  flex: 1;
+  max-width: 480px;
+}
+
+.search-container input {
+  background: none;
+  border: none;
+  color: white;
+  width: 100%;
+  padding: 4px;
+  outline: none;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-left: 24px;
+}
+
+.nav-items a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.login-btn {
+  background-color: white;
+  color: #1c2230;
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 24px;
+}
+
+.market-status {
+  padding: 24px;
+}
+
+.indices {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.index {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.negative {
+  color: #ff4e4e;
+}
+
+.market-mood {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.fear-zone {
+  color: #ffa726;
+}
+
+.weekly-indicators {
+  display: flex;
+  gap: 32px;
+  margin-top: 24px;
+}
+
+.indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid #4caf50;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.see-all {
+  color: #2196f3;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.feature-list {
+  list-style: none;
+  margin-bottom: 24px;
+}
+
+.feature-list li {
+  margin-bottom: 12px;
+  color: #b0bec5;
+}
+
+.cta-button {
+  display: block;
+  background-color: #2a3241;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 24px;
+}
+
+.stock-card {
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 20px;
+}
+
+.stock-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two-column layout */
+  gap: 10px;
+}
+
+.newsCointainer {
+  color: white;
+}
+
+.news-desc {
+  display: flex;
+  max-width: 100%;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+  color: #ccc;
+  padding: 20px;
+  height: 300px;
+  text-align: center;
+}
+.footer .links a {
+  color: #ccc;
+  margin: 0 10px;
+  text-decoration: none;
+}
+.footer .links a:hover {
+  color: white;
+}
+.social {
+  margin-top: 10px;
+}
+.social a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #ccc;
+}
+.social a:hover {
+  color: white;
+}
